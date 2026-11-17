@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Book Interaktif: Harmoni Keberagaman dan Resolusi Konflik</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#052e16',
+            },
+            civic: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f172a',
+            },
+            gold: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+    .text-content-sm { font-size: 0.95rem; line-height: 1.7; }
+    .text-content-base { font-size: 1.05rem; line-height: 1.8; }
+    .text-content-lg { font-size: 1.2rem; line-height: 1.9; }
+    .text-content-xl { font-size: 1.35rem; line-height: 2.0; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans transition-colors duration-200 antialiased min-h-screen flex flex-col selection:bg-civic-600 selection:text-white">
+
+  <!-- READING PROGRESS BAR -->
+  <div class="fixed top-0 left-0 w-full h-1.5 z-50 bg-slate-200 dark:bg-slate-800">
+    <div id="readingProgress" class="h-full bg-gradient-to-r from-emerald-500 via-blue-600 to-amber-500 w-0 transition-all duration-150"></div>
+  </div>
+
+  <!-- TOP NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      
+      <!-- Brand & Program Tag -->
+      <div class="flex items-center gap-3">
+        <a href="#hero" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 via-blue-600 to-indigo-800 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+            🕊️
+          </div>
+          <div>
+            <h1 class="text-sm font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
+              <span>Harmoni & Resolusi Konflik</span>
+              <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Sulsel 2026</span>
+            </h1>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate max-w-[240px] sm:max-w-none">Karya: Nasrul • SMAN 1 Parepare</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+        <a href="#daftar-isi" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Daftar Isi</a>
+        <a href="#bagian-a" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">A. Harmoni</a>
+        <a href="#bagian-b" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">B. Konflik</a>
+        <a href="#bagian-c" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">C. Strategi</a>
+        <a href="#bagian-d" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">D. Solutif</a>
+        <a href="#simulator" class="px-3 py-1.5 rounded-lg text-amber-700 dark:text-amber-400 font-semibold bg-amber-50 dark:bg-amber-950/60 hover:bg-amber-100 dark:hover:bg-amber-900/40 transition-colors flex items-center gap-1">
+          <span>⚡ Simulator Mediasi</span>
+        </a>
+        <a href="#kuis" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Kuis</a>
+        <a href="#duta-harmoni" class="px-3 py-1.5 rounded-lg text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-50 dark:bg-emerald-950/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-colors">Kartu Duta</a>
+      </nav>
+
+      <!-- Utility Controls -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <!-- Font Size Adjuster -->
+        <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-0.5 border border-slate-200 dark:border-slate-700">
+          <button id="btnFontDec" title="Perkecil Teks" class="w-7 h-7 flex items-center justify-center text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 rounded transition-all">A-</button>
+          <button id="btnFontInc" title="Perbesar Teks" class="w-7 h-7 flex items-center justify-center text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 rounded transition-all">A+</button>
+        </div>
+
+        <!-- Audio Sound Effects Toggle -->
+        <button id="btnAudioToggle" title="Audio Efek Suara" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700">
+          <span id="audioIcon">🔊</span>
+        </button>
+
+        <!-- Dark / Light Mode Toggle -->
+        <button id="btnThemeToggle" title="Ganti Mode Gelap / Terang" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="btnMobileMenu" class="md:hidden w-9 h-9 rounded-lg flex items-center justify-center text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 space-y-2">
+      <a href="#daftar-isi" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">📖 Daftar Isi</a>
+      <a href="#bagian-a" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">A. Konsep Harmoni dalam Keberagaman</a>
+      <a href="#bagian-b" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">B. Identifikasi Potensi Konflik</a>
+      <a href="#bagian-c" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">C. Strategi Mengatasi Konflik</a>
+      <a href="#bagian-d" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">D. Peran Serta Warga Negara Solutif</a>
+      <a href="#simulator" class="block px-3 py-2 rounded-lg text-amber-600 dark:text-amber-400 font-semibold bg-amber-50 dark:bg-amber-950/40">⚡ Simulator Mediasi Konflik</a>
+      <a href="#kuis" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">🏆 Kuis Master Harmoni</a>
+      <a href="#kamus" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">🔍 Kamus Saku Harmoni</a>
+      <a href="#duta-harmoni" class="block px-3 py-2 rounded-lg text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-950/50">🎖️ Kartu Duta Pelajar</a>
+    </div>
+  </header>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- MAIN WRAPPER -->
+  <main class="flex-grow">
+    
+    <!-- HERO SECTION / COVER -->
+    <section id="hero" class="relative overflow-hidden pt-12 pb-20 bg-gradient-to-b from-emerald-50/70 via-blue-50/50 to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 border-b border-slate-200 dark:border-slate-800">
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#10b9810a_1px,transparent_1px),linear-gradient(to_bottom,#10b9810a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+      
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Program Badges -->
+        <div class="inline-flex flex-wrap items-center justify-center gap-2 mb-6">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 shadow-sm">
+            <span>👤</span> Guru Pengembang: Nasrul — SMAN 1 Parepare
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300 border border-blue-200 dark:border-blue-800 shadow-sm">
+            <span>🏛️</span> Dinas Pendidikan Provinsi Sulawesi Selatan
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 border border-amber-200 dark:border-amber-800 shadow-sm">
+            <span>🌟</span> Program 10.000 Karya Digital Guru 2026
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 shadow-sm">
+            <span>🤝</span> Kearifan Lokal: Sipakatau • Sipakalebbi • Sipakainge
+          </span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+          E-Book Interaktif: <br class="hidden sm:inline">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-blue-600 to-indigo-700">Harmoni Keberagaman & Resolusi Konflik</span>
+        </h1>
+
+        <!-- Subtitle & Hook -->
+        <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-10 leading-relaxed">
+          Media pembelajaran digital interaktif berbasis Kurikulum Merdeka. Membahas tuntas konsep harmoni, pemetaan potensi konflik, prinsip dan metode efektif penyelesaian konflik, peran serta aktif warga negara, serta simulasi mediasi praktis bagi generasi muda berkarakter damai dan taat hukum.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-14">
+          <a href="#daftar-isi" class="px-6 py-3.5 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-lg shadow-emerald-500/30 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+            <span>📖 Mulai Membaca Modul</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="#simulator" class="px-6 py-3.5 rounded-xl font-bold text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 shadow-sm hover:-translate-y-0.5 transition-all flex items-center gap-2">
+            <span>⚡ Coba Simulator Mediasi</span>
+          </a>
+          <a href="#kuis" class="px-6 py-3.5 rounded-xl font-bold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 hover:bg-blue-100 dark:hover:bg-blue-900/50 border border-blue-200 dark:border-blue-800 transition-all flex items-center gap-2">
+            <span>🏆 Kuis Tantangan</span>
+          </a>
+          <a href="#duta-harmoni" class="px-6 py-3.5 rounded-xl font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 hover:bg-amber-100 dark:hover:bg-amber-900/50 border border-amber-200 dark:border-amber-800 transition-all flex items-center gap-2">
+            <span>🎖️ Ikrar & Kartu Duta</span>
+          </a>
+        </div>
+
+        <!-- Key Feature Stat Counters -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-slate-200 dark:border-slate-800 text-left">
+          <div class="p-4 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">4 Bagian</div>
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">Materi Terstruktur</div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Sesuai silabus resmi Kurikulum Merdeka (hal 71–98)</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">4 Kasus</div>
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">Simulator Mediasi</div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Uji keterampilan menengahi konflik secara damai</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="text-2xl font-bold text-indigo-500 mb-1">10 Soal</div>
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">Kuis Gamifikasi</div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Timer, sound effects, & pembahasan jawaban</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="text-2xl font-bold text-amber-500 mb-1">Resmi</div>
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">Kartu Duta Harmoni</div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Unduh kartu komitmen siswa berkarakter damai</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DAFTAR ISI INTERAKTIF -->
+    <section id="daftar-isi" class="py-14 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Peta Konsep Belajar</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Daftar Isi & Alur Pembelajaran</h2>
+        </div>
+        <div class="text-xs text-slate-500 dark:text-slate-400">
+          Klik untuk langsung mempelajari topik yang diinginkan
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <!-- Bagian A -->
+        <a href="#bagian-a" class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">BAGIAN A</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1">⏱️ 8 Menit • Hal 71</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              Konsep Harmoni dalam Keberagaman
+            </h3>
+            <ul class="text-xs text-slate-500 dark:text-slate-400 mt-2 space-y-1">
+              <li>• 1. Arti Penting dan Manfaat Harmoni dalam Keberagaman</li>
+              <li>• 2. Pentingnya Memahami dan Menghargai Keberagaman</li>
+              <li>• 3. Faktor Pendorong dan Penghambat Terwujudnya Harmoni</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+            <span>Pelajari Bagian A</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+
+        <!-- Bagian B -->
+        <a href="#bagian-b" class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500 dark:hover:border-amber-500 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">BAGIAN B</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1">⏱️ 7 Menit • Hal 83</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              Identifikasi Potensi Konflik dalam Masyarakat yang Beragam
+            </h3>
+            <ul class="text-xs text-slate-500 dark:text-slate-400 mt-2 space-y-1">
+              <li>• 1. Identifikasi Potensi Konflik dalam Kelompok Masyarakat</li>
+              <li>• 2. Faktor Penyebab Konflik dalam Kelompok Masyarakat</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-amber-600 dark:text-amber-400">
+            <span>Pelajari Bagian B</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+
+        <!-- Bagian C -->
+        <a href="#bagian-c" class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">BAGIAN C</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1">⏱️ 9 Menit • Hal 88</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              Strategi Mengatasi Konflik dalam Masyarakat Beragam
+            </h3>
+            <ul class="text-xs text-slate-500 dark:text-slate-400 mt-2 space-y-1">
+              <li>• 1. Prinsip-Prinsip dalam Mengatasi Konflik</li>
+              <li>• 2. Metode-Metode yang Efektif dalam Penyelesaian Konflik</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400">
+            <span>Pelajari Bagian C</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+
+        <!-- Bagian D -->
+        <a href="#bagian-d" class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-500 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">BAGIAN D</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1">⏱️ 8 Menit • Hal 95</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+              Peran Serta Warga Negara & Gagasan Solutif Penyelesaian Konflik
+            </h3>
+            <ul class="text-xs text-slate-500 dark:text-slate-400 mt-2 space-y-1">
+              <li>• 1. Peran Serta Warga Negara dalam Penyelesaian Konflik</li>
+              <li>• 2. Gagasan Solutif dalam Penyelesaian Konflik</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+            <span>Pelajari Bagian D</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTENT CHAPTERS CONTAINER -->
+    <div id="contentWrapper" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 pb-20 text-content-base">
+
+      <!-- ========================================== -->
+      <!-- BAGIAN A -->
+      <!-- ========================================== -->
+      <article id="bagian-a" class="pt-8 scroll-mt-20">
+        <!-- Chapter Header Badge -->
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-3 py-1 rounded-lg text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">BAGIAN A</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400">Halaman 71–82</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
+          Konsep Harmoni dalam Keberagaman
+        </h2>
+
+        <!-- Podcast / Audio Summary Box -->
+        <div class="p-4 rounded-xl bg-emerald-50/80 dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/50 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center text-lg flex-shrink-0">
+              🎧
+            </div>
+            <div>
+              <div class="text-xs font-bold text-emerald-900 dark:text-emerald-200">Audio Narator Bagian A</div>
+              <div class="text-xs text-emerald-700 dark:text-emerald-300">Dengarkan ikhtisar konsep harmoni, manfaat, serta faktor pendorong & penghambatnya</div>
+            </div>
+          </div>
+          <button onclick="playSpeechNarration('bagianA')" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors self-start sm:self-auto">
+            <span>▶️ Putar Narasi Suara</span>
+          </button>
+        </div>
+
+        <!-- 1. Arti Penting dan Manfaat Harmoni -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+            1. Arti Penting dan Manfaat Harmoni dalam Keberagaman (hal. 72)
+          </h3>
+          <p>
+            Kata <em>harmoni</em> berasal dari bahasa Yunani <em>harmonia</em>, yang berarti keselarasan, keserasian, atau kecocokan. Dalam konteks kehidupan berbangsa dan bernegara, <strong>harmoni dalam keberagaman</strong> adalah kondisi masyarakat di mana berbagai kelompok yang memiliki latar belakang suku, agama, ras, bahasa, adat istiadat, dan antargolongan dapat hidup berdampingan secara damai, saling menghargai martabat sesama, dan bekerjasama demi kemajuan bersama tanpa meniadakan perbedaan tersebut.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3 my-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1">Stabilitas & Keamanan Nasional</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Harmoni menjamin rasa aman bagi setiap warga negara untuk beraktivitas, beribadah, dan menuntut ilmu tanpa rasa takut akan diskriminasi atau teror fisik.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1">Kekayaan & Kreativitas Budaya</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Interaksi harmonis antarbudaya memperkaya khazanah tradisi, seni, teknologi lokal, dan daya cipta bangsa Indonesia di kancah peradaban dunia.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1">Pemerataan Pembangunan</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Suasana damai dan tertib memungkinkan pemerintah dan masyarakat fokus membangun sarana pendidikan, kesehatan, dan infrastruktur ekonomi.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1">Ketahanan Integrasi Sosial</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Masyarakat yang rukun memiliki modal sosial (*social capital*) yang kokoh sehingga kebal terhadap upaya provokasi, adu domba, dan disintegrasi bangsa.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Pentingnya Memahami dan Menghargai Keberagaman -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300 mt-8">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+            2. Pentingnya Memahami dan Menghargai Keberagaman (hal. 77)
+          </h3>
+          <p>
+            Keberagaman Indonesia bukanlah pilihan buatan, melainkan kodrat geografis dan historis. Menghargai keberagaman bukan sekadar bersikap "acuh tak acuh" atau toleransi pasif, melainkan pengakuan aktif bahwa setiap manusia memiliki hak asasi yang setara di mata Tuhan dan hukum (Pasal 28I UUD 1945).
+          </p>
+          <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-blue-50 dark:from-slate-900 dark:to-slate-850 border border-emerald-200 dark:border-slate-800 text-xs">
+            <strong class="text-emerald-800 dark:text-emerald-300">🌺 Keberagaman di Bumi Celebes (Sulawesi Selatan):</strong>
+            <p class="mt-1 text-slate-600 dark:text-slate-400 leading-relaxed">
+              Sulawesi Selatan dihuni oleh empat suku utama—<strong>Bugis, Makassar, Toraja, dan Mandar</strong>—serta komunitas etnis Tionghoa, Jawa, dan kepulauan. Tradisi kerukunan telah terpatri dalam sejarah panjang peradaban, seperti toleransi beragama dan perkawinan adat lintas kelompok yang saling menguatkan.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Faktor Pendorong dan Penghambat Terwujudnya Harmoni -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300 mt-8">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+            3. Faktor Pendorong dan Penghambat Terwujudnya Harmoni (hal. 79)
+          </h3>
+          
+          <!-- Interactive Tabbed Comparison -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex gap-2 border-b border-slate-200 dark:border-slate-800 pb-3 mb-4">
+              <button onclick="switchHarmoniTab('pendorong')" id="tabBtnPendorong" class="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition-all">
+                ✅ Faktor Pendorong Harmoni
+              </button>
+              <button onclick="switchHarmoniTab('penghambat')" id="tabBtnPenghambat" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all">
+                ❌ Faktor Penghambat Harmoni
+              </button>
+            </div>
+
+            <div id="harmoniContentArea" class="space-y-3">
+              <!-- Default Pendorong -->
+              <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs text-slate-700 dark:text-slate-300">
+                <strong>1. Sikap Toleransi & Keterbukaan Pikiran (Open-Mindedness):</strong> Kesediaan untuk mendengarkan, memahami sudut pandang orang lain, dan menghormati hak berkeyakinan.
+              </div>
+              <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs text-slate-700 dark:text-slate-300">
+                <strong>2. Penegakan Hukum yang Adil & Non-Diskriminatif:</strong> Aparat penegak hukum menjamin perlindungan bagi setiap warga negara tanpa memandang suku, agama, atau status sosial.
+              </div>
+              <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs text-slate-700 dark:text-slate-300">
+                <strong>3. Kearifan Lokal Gotong Royong:</strong> Falsafah persaudaraan tradisional seperti <em>Mapalus</em>, <em>Sambatan</em>, atau <em>Sipakatau</em> di Sulawesi Selatan.
+              </div>
+              <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs text-slate-700 dark:text-slate-300">
+                <strong>4. Kesadaran Identitas Bersama (Civic Nationalism):</strong> Menomorsatukan persatuan bangsa Indonesia di atas kepentingan sempit golongan atau primordialisme.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========================================== -->
+      <!-- BAGIAN B -->
+      <!-- ========================================== -->
+      <article id="bagian-b" class="pt-8 border-t border-slate-200 dark:border-slate-800 scroll-mt-20">
+        <!-- Chapter Header Badge -->
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-3 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">BAGIAN B</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400">Halaman 83–87</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
+          Identifikasi Potensi Konflik dalam Masyarakat yang Beragam
+        </h2>
+
+        <!-- Audio Player Bagian B -->
+        <div class="p-4 rounded-xl bg-amber-50/80 dark:bg-slate-900 border border-amber-200 dark:border-amber-900/50 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center text-lg flex-shrink-0">
+              ⚠️
+            </div>
+            <div>
+              <div class="text-xs font-bold text-amber-900 dark:text-amber-200">Audio Narator Bagian B</div>
+              <div class="text-xs text-amber-700 dark:text-amber-300">Dengarkan kupasan potensi konflik horizontal, vertikal, dan faktor penyebabnya</div>
+            </div>
+          </div>
+          <button onclick="playSpeechNarration('bagianB')" class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors self-start sm:self-auto">
+            <span>▶️ Putar Narasi Suara</span>
+          </button>
+        </div>
+
+        <!-- 1. Identifikasi Potensi Konflik -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+            1. Identifikasi Potensi Konflik dalam Kelompok Masyarakat (hal. 83)
+          </h3>
+          <p>
+            Konflik berasal dari kata kerja Latin <em>configere</em> yang berarti saling memukul. Dalam sosiologi, konflik adalah proses sosial antara dua orang atau lebih di mana salah satu pihak berusaha menyingkirkan pihak lain dengan menghancurkannya atau membuatnya tidak berdaya. Potensi konflik dapat dipetakan ke dalam beberapa tipologi:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3 my-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-amber-600 dark:text-amber-400 mb-1">Konflik Horizontal (Antarwarga/Kelompok)</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Terjadi antarkelompok atau individu yang memiliki kedudukan setara, misalnya perselisihan antarsuku, antarumat beragama, suporter olahraga, atau antarpelajar (tawuran).</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-amber-600 dark:text-amber-400 mb-1">Konflik Vertikal (Warga dengan Otoritas)</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Terjadi antara kelompok masyarakat dengan pemegang otoritas/kebijakan akibat ketidakpuasan regulasi, sengketa lahan, atau ketidakadilan hukum.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-amber-600 dark:text-amber-400 mb-1">Konflik Siber (Cyber Conflict / Medsos)</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Perang komentar, ujaran kebencian SARA, provokasi hoaks, dan doxxing yang terjadi di platform digital dan berisiko merembet menjadi benturan fisik nyata.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-amber-600 dark:text-amber-400 mb-1">Konflik Antargenerasi / Perundungan</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Dominasi senioritas yang menyimpang di sekolah (senior memalak atau mengintimidasi adik kelas) yang merusak budaya ramah anak.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Faktor Penyebab Konflik -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300 mt-8">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+            2. Faktor Penyebab Konflik dalam Kelompok Masyarakat (hal. 86)
+          </h3>
+          <p>
+            Mengapa konflik terjadi? Sosiolog Soerjono Soekanto mengidentifikasi 4 faktor akar penyebab konflik sosial:
+          </p>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <strong class="text-amber-600 dark:text-amber-400">a. Perbedaan Antarindividu:</strong> Setiap individu membawa kepribadian, pendirian, dan emosi yang berbeda. Rasa tersinggung akibat kesalahpahaman komunikasi dapat memicu benturan bila tidak ada pengendalian diri.
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <strong class="text-amber-600 dark:text-amber-400">b. Perbedaan Latar Belakang Kebudayaan (Stereotip & Etnosentrisme):</strong> Sikap menganggap budaya sendiri paling unggul (*etnosentrisme*) dan memberi label buruk secara sepihak kepada suku lain (*stereotip negatif*) menjadi pemicu utama prasangka SARA.
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <strong class="text-amber-600 dark:text-amber-400">c. Perbedaan Kepentingan (Politik & Ekonomi):</strong> Persaingan merebut sumber daya yang terbatas, posisi ketua organisasi/OSIS, atau penguasaan wilayah tongkrongan.
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <strong class="text-amber-600 dark:text-amber-400">d. Perubahan Sosial yang Terlalu Cepat (Disrupsi Teknologi):</strong> Banjir informasi di media sosial tanpa literasi kritis membuat masyarakat mudah terhasut oleh provokasi dan kabar bohong (hoaks).
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========================================== -->
+      <!-- BAGIAN C -->
+      <!-- ========================================== -->
+      <article id="bagian-c" class="pt-8 border-t border-slate-200 dark:border-slate-800 scroll-mt-20">
+        <!-- Chapter Header Badge -->
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-3 py-1 rounded-lg text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">BAGIAN C</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400">Halaman 88–94</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
+          Strategi Mengatasi Konflik dalam Masyarakat Beragam
+        </h2>
+
+        <!-- Audio Player Bagian C -->
+        <div class="p-4 rounded-xl bg-blue-50/80 dark:bg-slate-900 border border-blue-200 dark:border-blue-900/50 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg flex-shrink-0">
+              ⚖️
+            </div>
+            <div>
+              <div class="text-xs font-bold text-blue-900 dark:text-blue-200">Audio Narator Bagian C</div>
+              <div class="text-xs text-blue-700 dark:text-blue-300">Dengarkan prinsip dan metode efektif negosiasi, mediasi, arbitrase, konsiliasi, ajudikasi, serta keadilan restoratif</div>
+            </div>
+          </div>
+          <button onclick="playSpeechNarration('bagianC')" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors self-start sm:self-auto">
+            <span>▶️ Putar Narasi Suara</span>
+          </button>
+        </div>
+
+        <!-- 1. Prinsip-Prinsip Mengatasi Konflik -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+            1. Prinsip-Prinsip dalam Mengatasi Konflik (hal. 88)
+          </h3>
+          <p>
+            Penyelesaian konflik bukan tentang "siapa yang menang dan siapa yang kalah", melainkan bagaimana memulihkan kembali harmoni sosial dan rasa keadilan. Ada 4 prinsip fundamental yang harus dipatuhi:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3 my-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <strong class="text-xs text-blue-600 dark:text-blue-400">1. Pendekatan Tanpa Kekerasan (Non-Violence)</strong>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Mengedepankan jalur komunikasi santun, dialog terbuka, serta melarang keras tindakan fisik atau intimidasi psikologis.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <strong class="text-xs text-blue-600 dark:text-blue-400">2. Menjunjung Tinggi Martabat & HAM</strong>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Solusi yang diambil tidak boleh merendahkan martabat kemanusiaan para pihak yang bersengketa.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <strong class="text-xs text-blue-600 dark:text-blue-400">3. Netralitas & Keadilan (Fairness)</strong>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Pihak penengah (mediator/guru/aparat) tidak boleh memihak suku, agama, atau teman dekatnya.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <strong class="text-xs text-blue-600 dark:text-blue-400">4. Kepatuhan pada Aturan Hukum</strong>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Setiap kesepakatan damai harus selaras dengan tata tertib sekolah, norma kesusilaan, dan undang-undang yang berlaku.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Metode-Metode Efektif Penyelesaian Konflik -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300 mt-8">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+            2. Metode-Metode yang Efektif dalam Penyelesaian Konflik (hal. 91)
+          </h3>
+          <p>
+            Terdapat 5 metode penyelesaian konflik klasik ditambah pendekatan Keadilan Restoratif yang diterapkan dalam masyarakat dan lingkungan pendidikan (perlu dibedakan antara <strong>Ajudikasi</strong> di pengadilan formal dan <strong>Keadilan Restoratif</strong> yang berfokus pada pemulihan di luar pengadilan):
+          </p>
+
+          <!-- Interactive Tabbed Matrix Methods -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap gap-2 border-b border-slate-200 dark:border-slate-800 pb-3 mb-4">
+              <button onclick="switchMethodTab('negosiasi')" id="tabMethodNegosiasi" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white transition-all">Negosiasi</button>
+              <button onclick="switchMethodTab('mediasi')" id="tabMethodMediasi" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all">Mediasi (Paling Ideal)</button>
+              <button onclick="switchMethodTab('arbitrase')" id="tabMethodArbitrase" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all">Arbitrase</button>
+              <button onclick="switchMethodTab('konsiliasi')" id="tabMethodKonsiliasi" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all">Konsiliasi</button>
+              <button onclick="switchMethodTab('ajudikasi')" id="tabMethodAjudikasi" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all">Ajudikasi (Pengadilan)</button>
+              <button onclick="switchMethodTab('restoratif')" id="tabMethodRestoratif" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all">Keadilan Restoratif</button>
+            </div>
+
+            <div id="methodContentArea" class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+              <!-- Default Negosiasi -->
+              <h5 class="text-sm font-bold text-blue-600 dark:text-blue-400 mb-1">1. Negosiasi (Perundingan Langsung)</h5>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-2"><strong>Mekanisme:</strong> Kedua pihak yang berselisih duduk bersama secara langsung tanpa perantara pihak ketiga untuk mendiskusikan masalah dan menemukan titik temu (win-win solution).</p>
+              <p class="text-xs text-slate-600 dark:text-slate-300"><strong>Contoh di Sekolah:</strong> Dua orang teman yang berbeda pendapat mengenai pembagian tugas piket kelas saling berdiskusi dan menyepakati jadwal baru secara sukarela.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========================================== -->
+      <!-- BAGIAN D -->
+      <!-- ========================================== -->
+      <article id="bagian-d" class="pt-8 border-t border-slate-200 dark:border-slate-800 scroll-mt-20">
+        <!-- Chapter Header Badge -->
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-3 py-1 rounded-lg text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">BAGIAN D</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400">Halaman 95–98</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
+          Peran Serta Warga Negara & Gagasan Solutif Penyelesaian Konflik
+        </h2>
+
+        <!-- Audio Player Bagian D -->
+        <div class="p-4 rounded-xl bg-indigo-50/80 dark:bg-slate-900 border border-indigo-200 dark:border-indigo-900/50 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center text-lg flex-shrink-0">
+              🌟
+            </div>
+            <div>
+              <div class="text-xs font-bold text-indigo-900 dark:text-indigo-200">Audio Narator Bagian D</div>
+              <div class="text-xs text-indigo-700 dark:text-indigo-300">Dengarkan aksi nyata pelajar juru damai dan gagasan kearifan lokal Sipakatau</div>
+            </div>
+          </div>
+          <button onclick="playSpeechNarration('bagianD')" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors self-start sm:self-auto">
+            <span>▶️ Putar Narasi Suara</span>
+          </button>
+        </div>
+
+        <!-- 1. Peran Serta Warga Negara -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+            1. Peran Serta Warga Negara dalam Penyelesaian Konflik (hal. 95)
+          </h3>
+          <p>
+            Menciptakan kedamaian bukan hanya tugas aparat kepolisian atau hakim. Sebagai generasi muda dan warga negara terdidik, pelajar memegang peran strategis:
+          </p>
+          <div class="grid sm:grid-cols-3 gap-3 my-4">
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">Menjadi Upstander</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Tidak menjadi penonton pasif saat melihat perundungan atau provokasi SARA, melainkan berani melapor ke guru atau melerai dengan cara damai.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">Duta Digital Damai</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Menolak ikut menyebarkan konten provokatif, ujaran kebencian, dan hoaks di media sosial, serta giat membagikan narasi kerukunan.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <div class="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1">Peer Mediator</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Menjadi mediator sebaya yang menolong mendamaikan teman sekelas yang sedang berselisih paham sebelum membesar.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Gagasan Solutif dalam Penyelesaian Konflik -->
+        <div class="space-y-4 text-slate-700 dark:text-slate-300 mt-8">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+            2. Gagasan Solutif dalam Penyelesaian Konflik (hal. 98)
+          </h3>
+          
+          <!-- Kearifan Lokal Sulsel: Falsafah Sipakatau, Sipakalebbi, Sipakainge -->
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-amber-50 dark:from-slate-900 dark:to-slate-850 border border-emerald-200 dark:border-emerald-900/60 my-4">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-2xl">🏛️</span>
+              <h4 class="text-base font-bold text-slate-900 dark:text-white">Solusi Kultural Sulawesi Selatan: Tiga Pilar Falsafah Damai</h4>
+            </div>
+            <p class="text-xs text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+              Masyarakat Sulawesi Selatan memiliki warisan luhur yang sangat efektif mencegah dan meredam bibit konflik sosial:
+            </p>
+            <div class="grid sm:grid-cols-3 gap-3">
+              <div class="p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                <div class="text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-1">1. Sipakatau</div>
+                <p class="text-[11px] text-slate-600 dark:text-slate-400"><strong>Saling Memanusiakan:</strong> Memperlakukan setiap orang sebagai manusia seutuhnya tanpa membeda-bedakan latar belakang suku, agama, atau kekayaan.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                <div class="text-xs font-bold text-blue-700 dark:text-blue-400 mb-1">2. Sipakalebbi</div>
+                <p class="text-[11px] text-slate-600 dark:text-slate-400"><strong>Saling Menghargai & Memuji:</strong> Mengapresiasi kelebihan orang lain, bertutur kata sopan (*tabe'*), dan tidak merendahkan martabat sesama.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                <div class="text-xs font-bold text-amber-700 dark:text-amber-400 mb-1">3. Sipakainge</div>
+                <p class="text-[11px] text-slate-600 dark:text-slate-400"><strong>Saling Mengingatkan:</strong> Bersedia menasihati dan dinasihati dengan kasih sayang ketika ada yang khilaf atau terjerumus dalam kesalahan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
+            <strong>Gagasan Program Nyata di Sekolah:</strong> Membentuk <em>Komunitas Sahabat Damai</em>, mengadakan festival seni budaya nusantara antarkelas, serta menyelenggarakan simulasi pengadilan mediasi (*peer mediation workshop*) untuk menuntaskan perselisihan secara restoratif dan kekeluargaan.
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SIMULATOR MEDIASI & RESOLUSI KONFLIK INTERAKTIF -->
+    <!-- ========================================== -->
+    <section id="simulator" class="py-16 bg-slate-100 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800 scroll-mt-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-10">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Laboratorium Interaktif</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">
+            Simulator Mediasi Konflik Pelajar (Peer Mediator)
+          </h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-2">
+            Pilihlah salah satu skenario sengketa di bawah ini. Bertindaklah sebagai mediator sebaya yang bijak, pilihlah strategi mediasi, dan saksikan evaluasi dampak hukum serta sosiologisnya!
+          </p>
+        </div>
+
+        <!-- Scenario Selector Tabs -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6">
+          <button onclick="selectSimulatorScenario(0)" id="btnSim0" class="p-3 rounded-xl text-left font-bold text-xs bg-emerald-600 text-white shadow-sm transition-all">
+            <span class="block text-[10px] opacity-75 font-normal">KASUS 1</span>
+            📱 Candaan SARA Grup WA
+          </button>
+          <button onclick="selectSimulatorScenario(1)" id="btnSim1" class="p-3 rounded-xl text-left font-bold text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 transition-all border border-slate-200 dark:border-slate-700">
+            <span class="block text-[10px] opacity-75 font-normal">KASUS 2</span>
+            ⚽ Keributan Futsal Kelas
+          </button>
+          <button onclick="selectSimulatorScenario(2)" id="btnSim2" class="p-3 rounded-xl text-left font-bold text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 transition-all border border-slate-200 dark:border-slate-700">
+            <span class="block text-[10px] opacity-75 font-normal">KASUS 3</span>
+            🗳️ Polarisasi Pilketos
+          </button>
+          <button onclick="selectSimulatorScenario(3)" id="btnSim3" class="p-3 rounded-xl text-left font-bold text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 transition-all border border-slate-200 dark:border-slate-700">
+            <span class="block text-[10px] opacity-75 font-normal">KASUS 4</span>
+            🍛 Perbedaan Adat di Asrama
+          </button>
+        </div>
+
+        <!-- Simulator Active Card -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md">
+          <div id="simBadge" class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-2">Skenario Mediasi 1 dari 4</div>
+          <h3 id="simTitle" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3">
+            Candaan Bernuansa SARA di Grup Obrolan WhatsApp Kelas
+          </h3>
+          <p id="simDescription" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+            Di grup WA kelas, seorang siswa mengirim stiker meme yang memparodikan logat dan tradisi suku salah satu teman sekelasnya. Korban merasa sangat terhina dan menuntut permintaan maaf terbuka dengan ancaman akan membawa keluarga serta melapor ke kepolisian atas dugaan ujaran kebencian. Suasana grup memanas menjadi kubu-kubuan. Sebagai Ketua Kelas / Pengurus OSIS, apa langkah mediasi terbaikmu?
+          </p>
+
+          <!-- Choices Options -->
+          <div class="space-y-3 mb-6" id="simChoicesContainer">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Feedback Analysis Box -->
+          <div id="simFeedbackBox" class="hidden p-5 rounded-xl border transition-all">
+            <!-- Dynamic feedback -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- GAMIFIKASI KUIS TANTANGAN HARMONI (PEACE QUIZ CHALLENGE) -->
+    <!-- ========================================== -->
+    <section id="kuis" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-16">
+      
+      <div class="text-center mb-10">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">Uji Penguasaan Materi</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">
+          Kuis Tantangan: Duta Harmoni & Taat Hukum
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto mt-2">
+          Uji wawasanmu dari Bagian A sampai D! Capai skor minimal 80 untuk meraih predikat "Duta Pelajar Berkarakter Damai"!
+        </p>
+      </div>
+
+      <!-- Quiz Card Container -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md">
+        
+        <!-- Quiz Initial State -->
+        <div id="quizStartView" class="text-center py-8 space-y-4">
+          <div class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-300 mx-auto flex items-center justify-center text-3xl shadow-inner">
+            🕊️
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">Siap Menguji Pemahaman Harmoni & Konflik?</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+            10 butir soal komprehensif menguji pemahaman arti harmoni, tipologi konflik, metode mediasi & arbitrase, serta nilai luhur Sipakatau, Sipakalebbi, dan Sipakainge.
+          </p>
+          <div class="pt-2">
+            <button onclick="startQuiz()" class="px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-lg shadow-blue-500/30 transition-all hover:scale-105">
+              Mulai Kuis Sekarang 🚀
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Active Playing State -->
+        <div id="quizActiveView" class="hidden space-y-6">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
+            <div>
+              <span id="quizCounterText" class="text-xs font-bold text-blue-600 dark:text-blue-400">Soal 1 dari 10</span>
+              <div class="w-32 sm:w-48 h-2 rounded-full bg-slate-100 dark:bg-slate-800 mt-1 overflow-hidden">
+                <div id="quizProgressBar" class="h-full bg-blue-600 transition-all duration-300 w-10"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1">
+                <span>⏱️</span> <span id="quizTimer">20s</span>
+              </div>
+              <div class="px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                Skor: <span id="quizScoreDisplay">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 id="quizQuestionText" class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+              Pertanyaan kuis dimuat di sini...
+            </h4>
+          </div>
+
+          <div id="quizOptionsContainer" class="space-y-2.5">
+            <!-- Options button injected here -->
+          </div>
+
+          <div id="quizExplanationBox" class="hidden p-4 rounded-xl text-xs space-y-1">
+            <!-- Dynamic explanation -->
+          </div>
+
+          <div class="flex justify-end pt-2">
+            <button id="btnQuizNext" onclick="nextQuizQuestion()" class="hidden px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-all">
+              Pertanyaan Berikutnya →
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Result Screen -->
+        <div id="quizResultView" class="hidden text-center py-8 space-y-5">
+          <div id="quizResultBadgeIcon" class="text-5xl">🎖️</div>
+          <h3 id="quizResultTitle" class="text-2xl font-extrabold text-slate-900 dark:text-white">Selamat! Kamu Duta Harmoni Teladan!</h3>
+          <p id="quizResultSubtitle" class="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+            Kamu telah menunjukkan pemahaman yang sangat matang tentang keberagaman dan resolusi damai.
+          </p>
+
+          <div class="inline-flex items-center gap-6 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+            <div>
+              <div class="text-2xl font-black text-blue-600 dark:text-blue-400" id="finalScoreVal">90</div>
+              <div class="text-[10px] text-slate-500 font-bold uppercase">Skor Akhir</div>
+            </div>
+            <div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
+            <div>
+              <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400" id="finalCorrectVal">9/10</div>
+              <div class="text-[10px] text-slate-500 font-bold uppercase">Benar</div>
+            </div>
+            <div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
+            <div>
+              <div class="text-2xl font-black text-amber-500" id="finalStatusVal">LULUS</div>
+              <div class="text-[10px] text-slate-500 font-bold uppercase">Predikat</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-3 pt-4">
+            <button onclick="startQuiz()" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold transition-all">
+              🔄 Ulangi Kuis
+            </button>
+            <a href="#duta-harmoni" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md shadow-emerald-500/20 transition-all flex items-center gap-1.5">
+              <span>Cetak Kartu Duta Harmoni 🎖️</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- KAMUS SAKU KEBERAGAMAN & RESOLUSI KONFLIK -->
+    <!-- ========================================== -->
+    <section id="kamus" class="py-16 bg-slate-100 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800 scroll-mt-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Glosarium Cepat</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+              Kamus Saku Keberagaman & Resolusi Konflik
+            </h2>
+          </div>
+          <!-- Live Search Bar -->
+          <div class="relative w-full sm:w-72">
+            <input type="text" id="glossarySearch" placeholder="Cari istilah (mis: Mediasi, Etnosentrisme, Sipakatau)..." class="w-full px-3.5 py-2 pl-9 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs focus:ring-2 focus:ring-emerald-500 outline-none text-slate-900 dark:text-white transition-all">
+            <span class="absolute left-3 top-2.5 text-xs text-slate-400">🔍</span>
+          </div>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="flex flex-wrap gap-1.5 mb-6 text-xs" id="glossaryCategoryFilters">
+          <button onclick="filterGlossary('all')" class="px-3 py-1 rounded-lg font-bold bg-emerald-600 text-white" id="filterBtn_all">Semua</button>
+          <button onclick="filterGlossary('harmoni')" class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700" id="filterBtn_harmoni">Harmoni & Budaya</button>
+          <button onclick="filterGlossary('konflik')" class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700" id="filterBtn_konflik">Faktor Konflik</button>
+          <button onclick="filterGlossary('resolusi')" class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700" id="filterBtn_resolusi">Metode Resolusi</button>
+          <button onclick="filterGlossary('sulsel')" class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700" id="filterBtn_sulsel">Kearifan Sulsel</button>
+        </div>
+
+        <!-- Glossary Items Grid -->
+        <div id="glossaryItemsContainer" class="grid sm:grid-cols-2 gap-3">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <div id="glossaryEmptyState" class="hidden text-center py-8 text-xs text-slate-400">
+          Tidak ada istilah yang cocok dengan kata kunci pencarian.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- IKRAR & GENERATOR KARTU DUTA PELAJAR HARMONI -->
+    <!-- ========================================== -->
+    <section id="duta-harmoni" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-16">
+      
+      <div class="text-center mb-10">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Komitmen Integritas 2026</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">
+          Ikrar & Kartu Digital "Duta Pelajar Harmoni & Perdamaian"
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-2">
+          Tandatangani komitmen perdamaian dan toleransi, masukkan identitasmu, dan cetak Kartu Tanda Duta Pelajar Harmoni resmi yang dapat kamu unduh dan simpan!
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Form Input & Ikrar Checklist -->
+        <div class="md:col-span-6 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span>📝</span> Data Duta & Butir Ikrar Damai
+          </h3>
+
+          <div class="space-y-3">
+            <div>
+              <label for="inputDutaName" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nama Lengkap Siswa</label>
+              <input type="text" id="inputDutaName" value="Nasrul" placeholder="Contoh: Nasrul" class="w-full px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:ring-2 focus:ring-emerald-500 outline-none">
+            </div>
+            <div>
+              <label for="inputDutaSchool" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Asal Satuan Pendidikan (Sekolah/Madrasah)</label>
+              <input type="text" id="inputDutaSchool" value="SMAN 1 Parepare" placeholder="Contoh: SMAN 1 Parepare" class="w-full px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:ring-2 focus:ring-emerald-500 outline-none">
+            </div>
+            <div>
+              <label for="inputDutaNis" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Kelas / NISN</label>
+              <input type="text" id="inputDutaNis" value="Fase F / SMAN 1 Parepare" placeholder="Contoh: Fase F / SMAN 1 Parepare" class="w-full px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:ring-2 focus:ring-emerald-500 outline-none">
+            </div>
+          </div>
+
+          <!-- 5 Butir Ikrar Damai -->
+          <div class="pt-3 border-t border-slate-200 dark:border-slate-800 space-y-2">
+            <span class="block text-xs font-bold text-slate-800 dark:text-slate-200">5 Butir Ikrar Pelajar Harmoni:</span>
+            
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 cursor-pointer">
+              <input type="checkbox" id="ikrar1" class="ikrarCheck mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
+              <span>1. Menghargai dan merayakan keberagaman suku, agama, ras, dan antargolongan.</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 cursor-pointer">
+              <input type="checkbox" id="ikrar2" class="ikrarCheck mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
+              <span>2. Menolak stereotip negatif, etnosentrisme sempit, dan ujaran kebencian di dunia nyata & maya.</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 cursor-pointer">
+              <input type="checkbox" id="ikrar3" class="ikrarCheck mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
+              <span>3. Menyelesaikan perselisihan dengan musyawarah, negosiasi, dan mediasi tanpa kekerasan.</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 cursor-pointer">
+              <input type="checkbox" id="ikrar4" class="ikrarCheck mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
+              <span>4. Mengamalkan falsafah luhur Sulawesi Selatan: Sipakatau, Sipakalebbi, dan Sipakainge.</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 cursor-pointer">
+              <input type="checkbox" id="ikrar5" class="ikrarCheck mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
+              <span>5. Berperan aktif sebagai Upstander dan pelopor kerukunan di lingkungan sekolah dan masyarakat.</span>
+            </label>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="generateAmbassadorCard()" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white font-bold text-xs shadow-md shadow-emerald-500/20 transition-all flex items-center justify-center gap-2">
+              <span>✨ Terbitkan Kartu Duta Harmoni</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Real-time Canvas Card Display -->
+        <div class="md:col-span-6 flex flex-col items-center">
+          <div class="w-full p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl flex flex-col items-center">
+            
+            <div class="text-[11px] font-bold text-slate-400 mb-2 flex items-center gap-1.5 self-start">
+              <span>👁️</span> Pratinjau Kartu Digital (Official ID)
+            </div>
+
+            <!-- HTML5 Canvas Element -->
+            <div class="w-full overflow-hidden flex justify-center py-2">
+              <canvas id="idCardCanvas" width="600" height="380" class="w-full max-w-[480px] h-auto rounded-xl shadow-2xl border border-slate-700/60"></canvas>
+            </div>
+
+            <!-- Download Button -->
+            <div class="w-full mt-4 flex gap-2">
+              <button id="btnDownloadCard" onclick="downloadAmbassadorCard()" class="flex-1 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-md shadow-emerald-500/20">
+                <span>⬇️ Unduh Kartu (PNG)</span>
+              </button>
+              <button onclick="printAmbassadorCard()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors">
+                🖨️ Cetak
+              </button>
+            </div>
+
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-3 text-center">
+            Kartu digital ini dapat disimpan sebagai bukti portofolio Projek Penguatan Profil Pelajar Pancasila (P5) tema Bhinneka Tunggal Ika.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-400 space-y-3">
+      <div class="flex items-center justify-center gap-2 font-bold text-slate-800 dark:text-slate-200 text-sm">
+        <span>🕊️</span> E-Book Interaktif: Harmoni Keberagaman dan Resolusi Konflik
+      </div>
+      <p>
+        Karya Inovasi Pembelajaran Digital — Dinas Pendidikan Provinsi Sulawesi Selatan
+      </p>
+      <p class="text-xs font-semibold text-slate-700 dark:text-slate-300">Karya Inovasi Guru: Nasrul — SMAN 1 Parepare</p>
+      <p class="text-[11px]">
+        Dinas Pendidikan Provinsi Sulawesi Selatan • Program 10.000 Karya Digital Guru 2026 • Kurikulum Merdeka Pendidikan Pancasila SMA/SMK
+      </p>
+      <div class="pt-4 text-[10px] text-slate-400 border-t border-slate-100 dark:border-slate-800 max-w-md mx-auto">
+        Mengembangkan wawasan multikultural, kecakapan mediasi damai tanpa kekerasan, serta penguatan kearifan lokal Sipakatau, Sipakalebbi, dan Sipakainge.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT LOGIC -->
+  <!-- ========================================== -->
+  <script>
+    /* 1. STATE & AUDIO */
+    let currentFontSizeIndex = 1;
+    const fontClasses = ['text-content-sm', 'text-content-base', 'text-content-lg', 'text-content-xl'];
+    let isAudioEnabled = true;
+
+    let audioCtx = null;
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          audioCtx = new AudioContext();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playTone(freq, type, duration, delay = 0) {
+      if (!isAudioEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        setTimeout(() => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, ctx.currentTime);
+          gain.gain.setValueAtTime(0.15, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + duration);
+        }, delay * 1000);
+      } catch (e) {
+        console.warn('Audio play error', e);
+      }
+    }
+
+    function playSoundSuccess() {
+      playTone(523.25, 'sine', 0.15, 0);      // C5
+      playTone(659.25, 'sine', 0.15, 0.1);    // E5
+      playTone(783.99, 'sine', 0.25, 0.2);    // G5
+    }
+
+    function playSoundError() {
+      playTone(250, 'sawtooth', 0.2, 0);
+      playTone(200, 'sawtooth', 0.3, 0.15);
+    }
+
+    function playSoundClick() {
+      playTone(800, 'triangle', 0.05, 0);
+    }
+
+    function playSpeechNarration(sectionKey) {
+      playSoundClick();
+      if (!('speechSynthesis' in window)) {
+        showToast('Web Speech API tidak didukung pada peramban ini.', 'error');
+        return;
+      }
+      window.speechSynthesis.cancel();
+
+      let text = '';
+      if (sectionKey === 'bagianA') {
+        text = 'Bagian A: Konsep Harmoni dalam Keberagaman. Harmoni adalah keselarasan hidup berdampingan secara damai di tengah perbedaan suku, agama, ras, dan antargolongan. Faktor pendorong utamanya adalah sikap toleransi, keterbukaan, serta penegakan hukum yang adil.';
+      } else if (sectionKey === 'bagianB') {
+        text = 'Bagian B: Identifikasi Potensi Konflik dalam Masyarakat yang Beragam. Konflik dapat bersifat horizontal maupun vertikal. Akar penyebabnya mencakup stereotip negatif, etnosentrisme, perbedaan kepentingan, dan provokasi hoaks di media sosial.';
+      } else if (sectionKey === 'bagianC') {
+        text = 'Bagian C: Strategi Mengatasi Konflik dalam Masyarakat Beragam. Mengedepankan prinsip nirkekerasan dan martabat kemanusiaan. Metode efektif meliputi negosiasi, mediasi dengan pihak penengah netral, arbitrase, konsiliasi, ajudikasi melalui putusan hakim di pengadilan, serta pendekatan keadilan restoratif yang mengutamakan pemulihan hubungan di luar persidangan.';
+      } else if (sectionKey === 'bagianD') {
+        text = 'Bagian D: Peran Serta Warga Negara dan Gagasan Solutif Penyelesaian Konflik. Pelajar berperan aktif sebagai penolong perdamaian atau upstander, mengamalkan falsafah luhur Sulawesi Selatan: Sipakatau saling memanusiakan, Sipakalebbi saling menghargai, dan Sipakainge saling mengingatkan.';
+      }
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'id-ID';
+      utterance.rate = 1.0;
+      utterance.pitch = 1.0;
+      window.speechSynthesis.speak(utterance);
+      showToast('Memutar narasi suara ringkasan bab...', 'info');
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `px-4 py-2.5 rounded-xl text-xs font-semibold text-white shadow-lg flex items-center gap-2 transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto ${
+        type === 'success' ? 'bg-emerald-600' :
+        type === 'error' ? 'bg-red-600' :
+        'bg-slate-800 dark:bg-slate-700'
+      }`;
+      const icon = type === 'success' ? '✅' : type === 'error' ? '⚠️' : 'ℹ️';
+      toast.innerHTML = `<span>${icon}</span> <span>${message}</span>`;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // Font Resizing Logic
+    const contentWrapper = document.getElementById('contentWrapper');
+    function updateFontSize() {
+      fontClasses.forEach(c => contentWrapper.classList.remove(c));
+      contentWrapper.classList.add(fontClasses[currentFontSizeIndex]);
+      playSoundClick();
+    }
+
+    document.getElementById('btnFontDec').addEventListener('click', () => {
+      if (currentFontSizeIndex > 0) {
+        currentFontSizeIndex--;
+        updateFontSize();
+      }
+    });
+
+    document.getElementById('btnFontInc').addEventListener('click', () => {
+      if (currentFontSizeIndex < fontClasses.length - 1) {
+        currentFontSizeIndex++;
+        updateFontSize();
+      }
+    });
+
+    // Theme Toggle Logic
+    const btnThemeToggle = document.getElementById('btnThemeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    function initTheme() {
+      try {
+        const saved = localStorage.getItem('theme_preference');
+        if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          themeIcon.textContent = '☀️';
+        } else {
+          document.documentElement.classList.remove('dark');
+          themeIcon.textContent = '🌙';
+        }
+      } catch (e) {
+        console.warn('LocalStorage error', e);
+      }
+    }
+
+    btnThemeToggle.addEventListener('click', () => {
+      playSoundClick();
+      const isDark = document.documentElement.classList.toggle('dark');
+      themeIcon.textContent = isDark ? '☀️' : '🌙';
+      try {
+        localStorage.setItem('theme_preference', isDark ? 'dark' : 'light');
+      } catch (e) {}
+      showToast(isDark ? 'Mode gelap diaktifkan' : 'Mode terang diaktifkan');
+    });
+
+    // Audio Toggle
+    const btnAudioToggle = document.getElementById('btnAudioToggle');
+    const audioIcon = document.getElementById('audioIcon');
+    btnAudioToggle.addEventListener('click', () => {
+      isAudioEnabled = !isAudioEnabled;
+      audioIcon.textContent = isAudioEnabled ? '🔊' : '🔇';
+      playSoundClick();
+      showToast(isAudioEnabled ? 'Efek audio aktif' : 'Suara dimatikan');
+    });
+
+    // Mobile Menu Toggle
+    const btnMobileMenu = document.getElementById('btnMobileMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    btnMobileMenu.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Reading Progress Tracking
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('readingProgress').style.width = scrolled + '%';
+    });
+
+    /* 2. TABBED SECTIONS LOGIC */
+    function switchHarmoniTab(type) {
+      playSoundClick();
+      const btnP = document.getElementById('tabBtnPendorong');
+      const btnH = document.getElementById('tabBtnPenghambat');
+      const area = document.getElementById('harmoniContentArea');
+
+      if (type === 'pendorong') {
+        btnP.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition-all';
+        btnH.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all';
+        area.innerHTML = `
+          <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs text-slate-700 dark:text-slate-300">
+            <strong>1. Sikap Toleransi & Keterbukaan Pikiran (Open-Mindedness):</strong> Kesediaan untuk mendengarkan, memahami sudut pandang orang lain, dan menghormati hak berkeyakinan.
+          </div>
+          <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs text-slate-700 dark:text-slate-300">
+            <strong>2. Penegakan Hukum yang Adil & Non-Diskriminatif:</strong> Aparat penegak hukum menjamin perlindungan bagi setiap warga negara tanpa memandang suku, agama, atau status sosial.
+          </div>
+          <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs text-slate-700 dark:text-slate-300">
+            <strong>3. Kearifan Lokal Gotong Royong:</strong> Falsafah persaudaraan tradisional seperti <em>Mapalus</em>, <em>Sambatan</em>, atau <em>Sipakatau</em> di Sulawesi Selatan.
+          </div>
+          <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs text-slate-700 dark:text-slate-300">
+            <strong>4. Kesadaran Identitas Bersama (Civic Nationalism):</strong> Menomorsatukan persatuan bangsa Indonesia di atas kepentingan sempit golongan atau primordialisme.
+          </div>
+        `;
+      } else {
+        btnH.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-amber-600 text-white transition-all';
+        btnP.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all';
+        area.innerHTML = `
+          <div class="p-3.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-xs text-slate-700 dark:text-slate-300">
+            <strong>1. Sikap Etnosentrisme Berlebihan:</strong> Menganggap budaya atau suku sendiri paling luhur dan merendahkan martabat budaya masyarakat lain.
+          </div>
+          <div class="p-3.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-xs text-slate-700 dark:text-slate-300">
+            <strong>2. Prasangka & Stereotip Negatif:</strong> Penilaian sepihak dan prasangka buruk terhadap kelompok tertentu tanpa mengenalnya secara objektif.
+          </div>
+          <div class="p-3.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-xs text-slate-700 dark:text-slate-300">
+            <strong>3. Kesenjangan Sosial-Ekonomi yang Tajam:</strong> Ketidakadilan distribusi ekonomi dan kesempatan kerja yang memicu kecemburuan sosial antarkelompok.
+          </div>
+          <div class="p-3.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-xs text-slate-700 dark:text-slate-300">
+            <strong>4. Provokasi Medsos & Hoaks SARA:</strong> Penyebaran ujaran kebencian berbasis identitas yang dirancang untuk mengadu domba masyarakat.
+          </div>
+        `;
+      }
+    }
+
+    const methodData = {
+      negosiasi: {
+        title: "1. Negosiasi (Perundingan Langsung)",
+        desc: "Kedua pihak yang berselisih duduk bersama secara langsung tanpa perantara pihak ketiga untuk mendiskusikan masalah dan menemukan titik temu kesepakatan damai (win-win solution).",
+        example: "Dua pengurus ekstrakurikuler yang berselisih memperebutkan jadwal aula sekolah duduk bersama dan menyepakati jadwal bergantian secara adil."
+      },
+      mediasi: {
+        title: "2. Mediasi (Bantuan Pihak Penengah Netral)",
+        desc: "Penyelesaian sengketa dengan melibatkan pihak ketiga yang netral (mediator). Mediator bertugas memfasilitasi komunikasi dan membantu merumuskan opsi solusi, namun keputusan akhir tetap berada di tangan para pihak yang bersengketa.",
+        example: "Guru BK atau Wali Kelas menjadi mediator antara dua siswa yang berselisih paham, membantu mereka saling memaafkan dan membuat kesepakatan tertulis."
+      },
+      arbitrase: {
+        title: "3. Arbitrase (Putusan Mengikat dari Pihak Ketiga)",
+        desc: "Penyelesaian sengketa melalui pihak ketiga (arbiter) yang dipilih bersama oleh para pihak yang berselisih, di mana putusan arbiter bersifat mengikat secara hukum bagi kedua belah pihak.",
+        example: "Komite Disiplin Sekolah atau OSIS mengeluarkan keputusan final dan mengikat mengenai sanksi bagi dua tim suporter olahraga yang melanggar aturan sportivitas."
+      },
+      konsiliasi: {
+        title: "4. Konsiliasi (Lembaga Penyelaras Resmi)",
+        desc: "Upaya mempertemukan keinginan pihak yang berselisih melalui lembaga konsiliator resmi untuk mencapai perdamaian secara sistematis sebelum masuk ke proses pengadilan formal.",
+        example: "Forum Kerukunan Umat Beragama (FKUB) mempertemukan tokoh masyarakat saat terjadi kesalahpahaman pembangunan tempat ibadah."
+      },
+      ajudikasi: {
+        title: "5. Ajudikasi (Jalur Pengadilan Formal)",
+        desc: "Penyelesaian konflik atau sengketa melalui proses peradilan resmi di pengadilan negara. Hakim memeriksa alat bukti, mendengarkan keterangan para pihak, lalu menjatuhkan putusan hukum (vonis) yang bersifat memaksa, mengikat, dan menentukan pihak yang menang atau kalah (win-lose).",
+        example: "Sengketa pencemaran nama baik berat atau tindak pidana penganiayaan yang gagal didamaikan di luar pengadilan diselesaikan melalui sidang resmi di Pengadilan Negeri hingga hakim menjatuhkan putusan."
+      },
+      restoratif: {
+        title: "6. Keadilan Restoratif (Restorative Justice)",
+        desc: "Pendekatan penyelesaian perkara pidana (khususnya yang melibatkan anak/pelajar melalui mekanisme Diversi) di luar persidangan formal. Berbeda dengan ajudikasi yang berfokus pada vonis hukuman, keadilan restoratif melibatkan pelaku, korban, keluarga, dan masyarakat/sekolah untuk memulihkan hubungan sosial dan tanggung jawab moral secara damai.",
+        example: "Kasus perkelahian atau perundungan pelajar diselesaikan melalui musyawarah Diversi bersama orang tua, Guru BK, dan pembimbing kemasyarakatan agar pelaku mengakui kesalahan, meminta maaf, dan hubungan kembali pulih."
+      }
+    };
+
+    function switchMethodTab(key) {
+      playSoundClick();
+      ['negosiasi', 'mediasi', 'arbitrase', 'konsiliasi', 'ajudikasi', 'restoratif'].forEach(k => {
+        const btn = document.getElementById('tabMethod' + k.charAt(0).toUpperCase() + k.slice(1));
+        if (k === key) {
+          btn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white transition-all';
+        } else {
+          btn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all';
+        }
+      });
+
+      const item = methodData[key];
+      const area = document.getElementById('methodContentArea');
+      area.innerHTML = `
+        <h5 class="text-sm font-bold text-blue-600 dark:text-blue-400 mb-1">${item.title}</h5>
+        <p class="text-xs text-slate-600 dark:text-slate-300 mb-2"><strong>Mekanisme:</strong> ${item.desc}</p>
+        <p class="text-xs text-slate-600 dark:text-slate-300"><strong>Contoh Konkret:</strong> ${item.example}</p>
+      `;
+    }
+
+    /* 3. SIMULATOR MEDIASI KONFLIK (INTERACTIVE SCENARIOS) */
+    const simulatorScenarios = [
+      {
+        title: "Candaan Bernuansa SARA di Grup Obrolan WhatsApp Kelas",
+        description: "Di grup WA kelas, seorang siswa mengirim stiker meme yang memparodikan logat dan tradisi suku salah satu teman sekelasnya. Korban merasa sangat terhina dan menuntut permintaan maaf terbuka dengan ancaman akan membawa keluarga serta melapor ke kepolisian atas dugaan ujaran kebencian. Suasana grup memanas menjadi kubu-kubuan. Sebagai Ketua Kelas / Pengurus OSIS, apa langkah mediasi terbaikmu?",
+        choices: [
+          {
+            text: "A. Mematikan sementara fitur obrolan grup, menemui kedua pihak secara tatap muka bersama Wali Kelas, dan memfasilitasi dialog empati (Sipakatau) untuk saling memaafkan dan mengklarifikasi niat.",
+            isGood: true,
+            feedback: "🌟 <strong>Langkah Mediasi Teladan:</strong> Meredam eskalasi di ruang publik siber terlebih dahulu, kemudian membawa ke meja mediasi tatap muka yang aman. Pendekatan ini mencegah keterlibatan pihak luar yang dapat memperkeruh situasi dan menumbuhkan kesadaran moral tanpa mempermalukan pelaku."
+          },
+          {
+            text: "B. Membela teman yang mengirim stiker karena menganggap hal tersebut hanya sekadar lelucon biasa anak muda.",
+            isGood: false,
+            feedback: "❌ <strong>Pelanggaran Netralitas Mediator:</strong> Menganggap remeh candaan SARA melukai martabat korban dan melanggar prinsip Sipakatau. Ini memperbesar potensi konflik horizontal antarkelompok."
+          },
+          {
+            text: "C. Mengeluarkan korban dari grup WA kelas agar suasana kembali hening.",
+            isGood: false,
+            feedback: "⛔ <strong>Reviktimisasi:</strong> Menghukum korban yang terluka adalah ketidakadilan fatal dan bentuk diskriminasi kelompok yang merusak kepercayaan kelas."
+          }
+        ]
+      },
+      {
+        title: "Tuduhan Wasit Curang dan Keributan di Akhir Pertandingan Futsal Antarkelas",
+        description: "Pertandingan final liga futsal antarkelas berakhir ricuh karena gol penentu di menit akhir dianggap offside/handsball oleh suporter tim lawan. Emosi suporter memuncak hingga terjadi dorong-dorongan di pinggir lapangan dan kubu lawan menantang duel fisik di luar gerbang sekolah setelah jam pulang. Bagaimana tindakan resolusimu?",
+        choices: [
+          {
+            text: "A. Mengumpulkan kapten kedua tim dan perwakilan suporter di ruang OSIS bersama Guru Olahraga, meninjau rekaman pertandingan secara transparan, dan menyepakati deklarasi damai bersama.",
+            isGood: true,
+            feedback: "🌟 <strong>Resolusi Sangat Efektif (Konsiliasi & Negosiasi):</strong> Mengalihkan energi emosional menjadi proses pencarian fakta objektif. Membangun sportivitas dan membubarkan kerumunan potensi tawuran dengan cepat dan bermartabat."
+          },
+          {
+            text: "B. Menyuruh teman-teman sekelas bersiap-siap membawa kayu untuk berjaga-jaga duel di luar gerbang.",
+            isGood: false,
+            feedback: "⛔ <strong>Eskalasi Pidana Kekerasan:</strong> Merencanakan perkelahian massal dapat berujung jeratan hukum pidana penganiayaan (Pasal 170 KUHP) dan sanksi pemecatan dari sekolah."
+          },
+          {
+            text: "C. Membatalkan seluruh hasil turnamen tanpa memberikan penjelasan apa pun kepada kedua pihak.",
+            isGood: false,
+            feedback: "⚠️ <strong>Keputusan Sepihak (Otoriter):</strong> Membatalkan turnamen tanpa dialog hanya akan memendam bara kebencian yang sewaktu-waktu dapat meledak kembali."
+          }
+        ]
+      },
+      {
+        title: "Polarisasi & Kampanye Hitam Bermuatan Hoaks pada Pemilihan Ketua OSIS",
+        description: "Dua kandidat Ketua OSIS bersaing ketat. Tim sukses salah satu kandidat membuat akun media sosial bayangan dan menyebarkan rumor bohong bahwa kandidat lawan sering bolos dan menggunakan uang kas kelas. Anggota OSIS terbelah dan saling mencela di koridor sekolah. Apa gagasan solutif yang tepat?",
+        choices: [
+          {
+            text: "A. Mengaktifkan Majelis Permusyawaratan Siswa (MPK) dan Pembina OSIS untuk memanggil kedua kandidat, melakukan klarifikasi data kas secara terbuka, serta menandatangani Pakta Integritas Kampanye Damai.",
+            isGood: true,
+            feedback: "🌟 <strong>Penyelesaian Institusional Berkeadilan:</strong> Mengedepankan transparansi fakta untuk mematahkan hoaks. Mengajarkan budaya demokrasi yang taat aturan hukum dan etika sejak usia sekolah."
+          },
+          {
+            text: "B. Membalas dengan menyebarkan aib pribadi kandidat penyerang agar imbang di mata pemilih.",
+            isGood: false,
+            feedback: "❌ <strong>Pelanggaran Hukum ITE:</strong> Membalas fitnah dengan fitnah melipatgandakan pelanggaran hukum pencemaran nama baik (Pasal 27 ayat 3 UU ITE) dan merusak moral demokrasi sekolah."
+          },
+          {
+            text: "C. Menghentikan pemilihan OSIS dan menunjuk langsung Ketua OSIS dari murid berprestasi tanpa pemilu.",
+            isGood: false,
+            feedback: "⚠️ <strong>Kemunduran Budaya Demokrasi:</strong> Menghilangkan hak suara siswa tidak mendidik mereka belajar mengelola perbedaan pendapat dalam pesta demokrasi."
+          }
+        ]
+      },
+      {
+        title: "Kesalahpahaman Perbedaan Tradisi & Kebiasaan di Asrama Siswa",
+        description: "Dua siswa yang tinggal satu kamar di asrama sekolah sering bertengkar karena perbedaan latar belakang adat. Salah satu siswa terbiasa berbicara dengan nada lantang dan lugas (khas daerah asalnya), sementara teman sekamarnya menganggap nada bicara tersebut sebagai bentuk bentakan atau kemarahan. Mereka saling mendiamkan diri selama dua minggu. Bagaimana solusimu?",
+        choices: [
+          {
+            text: "A. Mengadakan sesi 'Malam Budaya & Tukar Cerita' di asrama untuk saling menjelaskan filosofi adat, didampingi pembina asrama, sehingga masing-masing memahami dialek dan ekspresi budaya temannya.",
+            isGood: true,
+            feedback: "🌟 <strong>Dialog Antarbudaya (Sipakalebbi):</strong> Mengubah ketidaktahuan menjadi kekaguman atas keberagaman. Falsafah Sipakalebbi mengajarkan kita melihat keunikan budaya lain dengan penuh penghormatan dan kearifan."
+          },
+          {
+            text: "B. Memaksa siswa bersuara lantang untuk tidak boleh berbicara sama sekali di dalam asrama.",
+            isGood: false,
+            feedback: "❌ <strong>Diskriminasi Identitas Budaya:</strong> Membungkam logat daerah seseorang melanggar hak asasi kultural dan memicu keterasingan batin siswa perantau."
+          },
+          {
+            text: "C. Memisahkan mereka ke kamar yang berbeda dan membiarkan mereka tetap bermusuhan.",
+            isGood: false,
+            feedback: "⚠️ <strong>Solusi Pelarian Sementara:</strong> Menghindar tidak menyelesaikan prasangka. Di masa depan mereka akan tetap kesulitan bekerja sama dalam masyarakat majemuk."
+          }
+        ]
+      }
+    ];
+
+    let currentSimulatorIndex = 0;
+
+    function renderSimulator() {
+      const scen = simulatorScenarios[currentSimulatorIndex];
+      document.getElementById('simBadge').textContent = `Skenario Mediasi ${currentSimulatorIndex + 1} dari ${simulatorScenarios.length}`;
+      document.getElementById('simTitle').textContent = scen.title;
+      document.getElementById('simDescription').textContent = scen.description;
+
+      const container = document.getElementById('simChoicesContainer');
+      container.innerHTML = '';
+
+      scen.choices.forEach((choice, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200 transition-all flex items-start gap-2.5';
+        btn.innerHTML = `<span class="mt-0.5 text-emerald-600 dark:text-emerald-400 font-bold">🔘</span> <span>${choice.text}</span>`;
+        btn.onclick = () => selectSimulatorChoice(idx);
+        container.appendChild(btn);
+      });
+
+      const feedbackBox = document.getElementById('simFeedbackBox');
+      feedbackBox.classList.add('hidden');
+    }
+
+    function selectSimulatorScenario(idx) {
+      playSoundClick();
+      currentSimulatorIndex = idx;
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`btnSim${i}`);
+        if (i === idx) {
+          btn.className = 'p-3 rounded-xl text-left font-bold text-xs bg-emerald-600 text-white shadow-sm transition-all';
+        } else {
+          btn.className = 'p-3 rounded-xl text-left font-bold text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 transition-all border border-slate-200 dark:border-slate-700';
+        }
+      }
+      renderSimulator();
+    }
+
+    function selectSimulatorChoice(choiceIdx) {
+      const scen = simulatorScenarios[currentSimulatorIndex];
+      const choice = scen.choices[choiceIdx];
+      const feedbackBox = document.getElementById('simFeedbackBox');
+
+      if (choice.isGood) {
+        playSoundSuccess();
+        feedbackBox.className = 'p-5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-xs text-emerald-900 dark:text-emerald-200 space-y-1';
+      } else {
+        playSoundError();
+        feedbackBox.className = 'p-5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-xs text-amber-900 dark:text-amber-200 space-y-1';
+      }
+
+      feedbackBox.innerHTML = `
+        <div class="font-bold flex items-center gap-1.5 text-sm mb-1">
+          <span>${choice.isGood ? '✅ Analisis Tepat' : '⚠️ Evaluasi Dampak'}</span>
+        </div>
+        <p class="leading-relaxed">${choice.feedback}</p>
+      `;
+      feedbackBox.classList.remove('hidden');
+    }
+
+    /* 4. GAMIFIKASI KUIS (10 QUESTIONS) */
+    const quizQuestions = [
+      {
+        q: "Kondisi keserasian, keselarasan, dan keteraturan hidup berdampingan secara damai di tengah berbagai perbedaan suku, agama, dan budaya disebut...",
+        opts: [
+          "Asimilasi Kebudayaan",
+          "Harmoni dalam Keberagaman",
+          "Etnosentrisme Komunal",
+          "Akulturasi Paksaan"
+        ],
+        ans: 1,
+        exp: "Harmoni dalam keberagaman (hal 71) menggambarkan keselarasan hidup bermasyarakat tanpa meniadakan keunikan identitas masing-masing kelompok."
+      },
+      {
+        q: "Sikap memandang dan menilai kebudayaan kelompok lain secara sempit menggunakan tolak ukur kebudayaannya sendiri yang dianggap paling unggul disebut...",
+        opts: [
+          "Etnosentrisme",
+          "Multikulturalisme",
+          "Pluralisme Kritis",
+          "Chauvinisme Hukum"
+        ],
+        ans: 0,
+        exp: "Etnosentrisme merupakan faktor penghambat utama harmoni karena melahirkan prasangka buruk terhadap suku/kelompok lain (hal 79 & 86)."
+      },
+      {
+        q: "Konflik yang terjadi antara kelompok atau individu yang memiliki kedudukan kekuasaan yang sejajar (misalnya antarpelajar atau antarsuporter) dikategorikan sebagai...",
+        opts: [
+          "Konflik Vertikal",
+          "Konflik Horizontal",
+          "Konflik Struktural",
+          "Konflik Otoritas"
+        ],
+        ans: 1,
+        exp: "Konflik horizontal adalah perselisihan antarkelompok masyarakat yang berposisi setara, seperti gesekan antarsuku atau tawuran pelajar (hal 83)."
+      },
+      {
+        q: "Metode penyelesaian konflik di mana para pihak yang bersengketa dibantu oleh pihak ketiga netral yang memfasilitasi dialog damai tanpa memutus secara sepihak disebut...",
+        opts: [
+          "Ajudikasi",
+          "Arbitrase",
+          "Mediasi",
+          "Bilateral Konsolidasi"
+        ],
+        ans: 2,
+        exp: "Mediasi (hal 91) melibatkan mediator netral yang membantu para pihak merumuskan solusi damai yang disepakati bersama secara sukarela."
+      },
+      {
+        q: "Perbedaan mendasar antara metode 'Mediasi' dan 'Arbitrase' terletak pada...",
+        opts: [
+          "Arbitrase hanya boleh dilakukan di kantor polisi",
+          "Putusan arbiter bersifat mengikat para pihak, sedangkan mediator hanya memfasilitasi perundingan",
+          "Mediasi selalu berujung pada hukuman penjara bagi yang bersalah",
+          "Arbitrase tidak memerlukan pihak ketiga sama sekali"
+        ],
+        ans: 1,
+        exp: "Pada arbitrase (hal 91), pihak ketiga (arbiter) memiliki kewenangan memberikan keputusan final yang mengikat, sedangkan mediator tidak berwenang memutus."
+      },
+      {
+        q: "Dalam falsafah kearifan lokal Bugis-Makassar, konsep 'Sipakatau' bermakna...",
+        opts: [
+          "Saling memanusiakan dan memandang sesama dengan setara martabatnya",
+          "Saling bersaing untuk mendapatkan kekayaan tertinggi",
+          "Saling membungkam perbedaan pendapat agar tidak ribut",
+          "Saling memaafkan hanya jika ada desakan dari tokoh adat"
+        ],
+        ans: 0,
+        exp: "Sipakatau (hal 98) berarti saling memanusiakan sesama tanpa diskriminasi ras, suku, maupun status sosial."
+      },
+      {
+        q: "Nilai luhur Sulawesi Selatan yang menekankan pentingnya saling menghargai kelebihan, bertutur kata sopan (*tabe'*), dan tidak merendahkan sesama adalah...",
+        opts: [
+          "Sipakainge",
+          "Sipakalebbi",
+          "Taro Ada Taro Gau",
+          "Siri' Pengganti"
+        ],
+        ans: 1,
+        exp: "Sipakalebbi (hal 98) adalah prinsip memuliakan dan menghormati sesama manusia dengan perkataan dan perlakuan yang santun."
+      },
+      {
+        q: "Penyelesaian perkara anak yang berkonflik dengan hukum dengan mengutamakan pemulihan keadilan bagi korban dan musyawarah damai di luar peradilan formal disebut...",
+        opts: [
+          "Retributif Justice",
+          "Keadilan Restoratif (Restorative Justice / Diversi)",
+          "Inkuisitor Pidana",
+          "Eksaminasi Peradilan"
+        ],
+        ans: 1,
+        exp: "Keadilan Restoratif (hal 92) menekankan pemulihan kembali hubungan sosial dan rekonsiliasi daripada sekadar hukuman kurungan bagi anak."
+      },
+      {
+        q: "Seorang pelajar yang berani bertindak melerai, mendamaikan, atau melaporkan provokasi kebencian SARA demi mencegah konflik disebut berperan sebagai...",
+        opts: [
+          "Bystander",
+          "Upstander / Juru Damai",
+          "Provokator Pasif",
+          "Agregator Konflik"
+        ],
+        ans: 1,
+        exp: "Upstander (hal 95) adalah warga negara yang aktif membela kebenaran dan perdamaian, bukan sekadar penonton pasif saat ketidakadilan terjadi."
+      },
+      {
+        q: "Prinsip utama penyelesaian konflik yang melarang keras penggunaan kekerasan fisik dan tekanan intimidasi psikologis dalam perundingan adalah...",
+        opts: [
+          "Prinsip Ahimsa / Non-Violence",
+          "Prinsip Status Quo Mutlak",
+          "Prinsip Oportunitas Hakim",
+          "Prinsip Kepentingan Mayoritas"
+        ],
+        ans: 0,
+        exp: "Prinsip nirkekerasan (non-violence / hal 88) adalah fondasi etika hukum modern dalam merajut rekonsiliasi damai."
+      }
+    ];
+
+    let quizCurrentIdx = 0;
+    let quizScore = 0;
+    let quizTimerInterval = null;
+    let quizTimeLeft = 20;
+
+    function startQuiz() {
+      playSoundClick();
+      quizCurrentIdx = 0;
+      quizScore = 0;
+      document.getElementById('quizStartView').classList.add('hidden');
+      document.getElementById('quizResultView').classList.add('hidden');
+      document.getElementById('quizActiveView').classList.remove('hidden');
+      loadQuizQuestion();
+    }
+
+    function loadQuizQuestion() {
+      clearInterval(quizTimerInterval);
+      quizTimeLeft = 20;
+      updateTimerDisplay();
+
+      const qData = quizQuestions[quizCurrentIdx];
+      document.getElementById('quizCounterText').textContent = `Soal ${quizCurrentIdx + 1} dari ${quizQuestions.length}`;
+      document.getElementById('quizProgressBar').style.width = `${((quizCurrentIdx + 1) / quizQuestions.length) * 100}%`;
+      document.getElementById('quizScoreDisplay').textContent = quizScore;
+      document.getElementById('quizQuestionText').textContent = qData.q;
+
+      const container = document.getElementById('quizOptionsContainer');
+      container.innerHTML = '';
+      document.getElementById('quizExplanationBox').classList.add('hidden');
+      document.getElementById('btnQuizNext').classList.add('hidden');
+
+      const letters = ['A', 'B', 'C', 'D'];
+      qData.opts.forEach((optText, oIdx) => {
+        const btn = document.createElement('button');
+        btn.id = `qOpt_${oIdx}`;
+        btn.className = 'w-full text-left p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-700 transition-all flex items-start gap-2.5';
+        btn.innerHTML = `<span class="w-5 h-5 rounded-md bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-[11px] flex-shrink-0 text-slate-700 dark:text-slate-300">${letters[oIdx]}</span> <span>${optText}</span>`;
+        btn.onclick = () => answerQuiz(oIdx);
+        container.appendChild(btn);
+      });
+
+      quizTimerInterval = setInterval(() => {
+        quizTimeLeft--;
+        updateTimerDisplay();
+        if (quizTimeLeft <= 0) {
+          clearInterval(quizTimerInterval);
+          answerQuiz(-1);
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const el = document.getElementById('quizTimer');
+      el.textContent = `${quizTimeLeft}s`;
+      if (quizTimeLeft <= 5) {
+        el.className = 'text-red-500 font-bold animate-pulse';
+      } else {
+        el.className = 'text-slate-700 dark:text-slate-300';
+      }
+    }
+
+    function answerQuiz(chosenIdx) {
+      clearInterval(quizTimerInterval);
+      const qData = quizQuestions[quizCurrentIdx];
+      const isCorrect = chosenIdx === qData.ans;
+
+      qData.opts.forEach((_, oIdx) => {
+        const btn = document.getElementById(`qOpt_${oIdx}`);
+        btn.disabled = true;
+        if (oIdx === qData.ans) {
+          btn.classList.remove('bg-slate-50', 'dark:bg-slate-800');
+          btn.classList.add('bg-emerald-100', 'dark:bg-emerald-950', 'border-emerald-500', 'text-emerald-900', 'dark:text-emerald-200');
+        } else if (oIdx === chosenIdx && !isCorrect) {
+          btn.classList.remove('bg-slate-50', 'dark:bg-slate-800');
+          btn.classList.add('bg-red-100', 'dark:bg-red-950', 'border-red-500', 'text-red-900', 'dark:text-red-200');
+        }
+      });
+
+      if (isCorrect) {
+        playSoundSuccess();
+        quizScore += 10;
+        document.getElementById('quizScoreDisplay').textContent = quizScore;
+      } else {
+        playSoundError();
+      }
+
+      const expBox = document.getElementById('quizExplanationBox');
+      expBox.className = `p-4 rounded-xl text-xs space-y-1 ${
+        isCorrect ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800' :
+        'bg-red-50 dark:bg-red-950/40 text-red-900 dark:text-red-200 border border-red-200 dark:border-red-800'
+      }`;
+      expBox.innerHTML = `
+        <div class="font-bold flex items-center gap-1.5 text-xs">
+          <span>${isCorrect ? '🎉 Jawabanmu Tepat!' : '❌ Jawaban Kurang Tepat'}</span>
+        </div>
+        <p class="leading-relaxed">${qData.exp}</p>
+      `;
+      expBox.classList.remove('hidden');
+
+      document.getElementById('btnQuizNext').classList.remove('hidden');
+    }
+
+    function nextQuizQuestion() {
+      playSoundClick();
+      quizCurrentIdx++;
+      if (quizCurrentIdx < quizQuestions.length) {
+        loadQuizQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz() {
+      playSoundSuccess();
+      document.getElementById('quizActiveView').classList.add('hidden');
+      document.getElementById('quizResultView').classList.remove('hidden');
+
+      const finalScore = quizScore;
+      const correctCount = quizScore / 10;
+      document.getElementById('finalScoreVal').textContent = finalScore;
+      document.getElementById('finalCorrectVal').textContent = `${correctCount}/${quizQuestions.length}`;
+
+      const titleEl = document.getElementById('quizResultTitle');
+      const subEl = document.getElementById('quizResultSubtitle');
+      const badgeEl = document.getElementById('quizResultBadgeIcon');
+      const statusEl = document.getElementById('finalStatusVal');
+
+      if (finalScore >= 80) {
+        badgeEl.textContent = '🥇';
+        titleEl.textContent = 'Luar Biasa! Duta Harmoni Berintegritas!';
+        subEl.textContent = 'Pemahamanmu tentang harmoni dan resolusi konflik sangat matang. Kamu layak menjadi teladan dan juru damai di sekolahmu!';
+        statusEl.textContent = 'LULUS MEMUASKAN';
+        statusEl.className = 'text-2xl font-black text-emerald-500';
+      } else if (finalScore >= 60) {
+        badgeEl.textContent = '🥈';
+        titleEl.textContent = 'Kerja Bagus! Tingkatkan Wawasanmu!';
+        subEl.textContent = 'Kamu sudah menguasai sebagian besar materi. Pelajari kembali bagian strategi resolusi konflik untuk hasil sempurna.';
+        statusEl.textContent = 'CUKUP';
+        statusEl.className = 'text-2xl font-black text-amber-500';
+      } else {
+        badgeEl.textContent = '📚';
+        titleEl.textContent = 'Yuk, Pelajari Kembali Modulnya!';
+        subEl.textContent = 'Jangan berkecil hati. Buka kembali materi Bab A sampai D di atas dan coba kuis ini sekali lagi!';
+        statusEl.textContent = 'BELAJAR LAGI';
+        statusEl.className = 'text-2xl font-black text-blue-500';
+      }
+    }
+
+    /* 5. KAMUS SAKU KEBERAGAMAN & KONFLIK */
+    const glossaryItems = [
+      {
+        term: "Harmoni dalam Keberagaman",
+        cat: "harmoni",
+        latin: "Harmonia Socialis",
+        def: "Kondisi keserasian dan keselarasan hidup berdampingan secara damai antarberbagai kelompok masyarakat yang berbeda latar belakang suku, agama, ras, dan adat."
+      },
+      {
+        term: "Sipakatau",
+        cat: "sulsel",
+        latin: "Falsafah Luhur Sulsel",
+        def: "Nilai saling memanusiakan manusia seutuhnya tanpa membeda-bedakan status sosial, asal-usul kedaerahan, suku, maupun keyakinan."
+      },
+      {
+        term: "Sipakalebbi",
+        cat: "sulsel",
+        latin: "Falsafah Luhur Sulsel",
+        def: "Prinsip saling menghargai martabat sesama, mengapresiasi kelebihan orang lain, dan senantiasa bertutur kata sopan (*tabe'*)."
+      },
+      {
+        term: "Sipakainge",
+        cat: "sulsel",
+        latin: "Falsafah Luhur Sulsel",
+        def: "Tradisi saling mengingatkan dan menasihati dalam kebaikan dengan cara yang santun dan penuh kasih sayang ketika ada teman yang khilaf."
+      },
+      {
+        term: "Mediasi (Mediation)",
+        cat: "resolusi",
+        latin: "Penyelesaian Lewat Penengah",
+        def: "Proses penyelesaian sengketa dengan bantuan pihak ketiga yang netral untuk memfasilitasi perundingan damai tanpa memutus secara sepihak."
+      },
+      {
+        term: "Arbitrase (Arbitration)",
+        cat: "resolusi",
+        latin: "Putusan Arbiter Mengikat",
+        def: "Penyelesaian sengketa perdata/sosial di luar pengadilan melalui pihak ketiga yang ditunjuk bersama dan memiliki kewenangan memberi keputusan mengikat."
+      },
+      {
+        term: "Ajudikasi (Adjudication)",
+        cat: "resolusi",
+        latin: "Putusan Pengadilan Formal",
+        def: "Penyelesaian konflik atau sengketa melalui jalur peradilan resmi di pengadilan, di mana hakim berwenang menjatuhkan putusan hukum yang mengikat dan memaksa bagi para pihak."
+      },
+      {
+        term: "Keadilan Restoratif (Restorative Justice)",
+        cat: "resolusi",
+        latin: "Pemulihan Hubungan Sosial",
+        def: "Penyelesaian perkara dengan menitikberatkan pada pemulihan kembali hubungan antara pelaku, korban, dan masyarakat daripada sekadar pembalasan hukuman."
+      },
+      {
+        term: "Etnosentrisme",
+        cat: "konflik",
+        latin: "Fanatisme Suku Sempit",
+        def: "Sikap atau pandangan yang berpangkal pada masyarakat dan kebudayaan sendiri, disertai kecenderungan meremehkan masyarakat dan kebudayaan lain."
+      },
+      {
+        term: "Stereotip Negatif",
+        cat: "konflik",
+        latin: "Pelabelan Sepihak",
+        def: "Pemberian sifat atau label tertentu secara subjektif dan serampangan kepada suatu kelompok masyarakat tanpa pembuktian fakta objektif."
+      },
+      {
+        term: "Konflik Horizontal",
+        cat: "konflik",
+        latin: "Perselisihan Antarwarga",
+        def: "Konflik yang timbul antarkelompok masyarakat yang berkedudukan setara, seperti perselisihan antarsuku, antarwarga desa, atau antarpelajar."
+      },
+      {
+        term: "Upstander",
+        cat: "harmoni",
+        latin: "Pelopor Perdamaian",
+        def: "Individu yang mengambil tindakan aktif untuk membela, menolong korban perundungan, atau mendamaikan perselisihan, bukan sekadar penonton pasif."
+      },
+      {
+        term: "Konsiliasi",
+        cat: "resolusi",
+        latin: "Perdamaian Lembaga",
+        def: "Upaya mempertemukan keinginan para pihak yang bersengketa melalui lembaga konsiliator resmi guna mencapai kesepakatan damai."
+      }
+    ];
+
+    let currentGlossaryCat = 'all';
+
+    function renderGlossary() {
+      const container = document.getElementById('glossaryItemsContainer');
+      const emptyEl = document.getElementById('glossaryEmptyState');
+      const query = document.getElementById('glossarySearch').value.toLowerCase().trim();
+
+      container.innerHTML = '';
+      let matchCount = 0;
+
+      glossaryItems.forEach(item => {
+        const matchCat = (currentGlossaryCat === 'all' || item.cat === currentGlossaryCat);
+        const matchQuery = item.term.toLowerCase().includes(query) || item.def.toLowerCase().includes(query) || item.latin.toLowerCase().includes(query);
+
+        if (matchCat && matchQuery) {
+          matchCount++;
+          const card = document.createElement('div');
+          card.className = 'p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500 transition-colors';
+          card.innerHTML = `
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white">${item.term}</h4>
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 uppercase">${item.cat}</span>
+            </div>
+            <div class="text-[11px] text-emerald-600 dark:text-emerald-400 italic mb-1.5">${item.latin}</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">${item.def}</p>
+          `;
+          container.appendChild(card);
+        }
+      });
+
+      emptyEl.classList.toggle('hidden', matchCount > 0);
+    }
+
+    function filterGlossary(cat) {
+      playSoundClick();
+      currentGlossaryCat = cat;
+      ['all', 'harmoni', 'konflik', 'resolusi', 'sulsel'].forEach(c => {
+        const btn = document.getElementById(`filterBtn_${c}`);
+        if (c === cat) {
+          btn.className = 'px-3 py-1 rounded-lg font-bold bg-emerald-600 text-white';
+        } else {
+          btn.className = 'px-3 py-1 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700';
+        }
+      });
+      renderGlossary();
+    }
+
+    document.getElementById('glossarySearch').addEventListener('input', () => {
+      renderGlossary();
+    });
+
+    /* 6. IKRAR & CANVAS ID CARD GENERATOR */
+    function drawAmbassadorCard(name, school, nis) {
+      const canvas = document.getElementById('idCardCanvas');
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width;
+      const h = canvas.height;
+
+      // Background Gradient (Emerald & Royal Navy Blue)
+      const bgGrad = ctx.createLinearGradient(0, 0, w, h);
+      bgGrad.addColorStop(0, '#064e3b');
+      bgGrad.addColorStop(0.45, '#0f172a');
+      bgGrad.addColorStop(1, '#0b1329');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Decorative Geometric Waves
+      ctx.save();
+      ctx.strokeStyle = 'rgba(16, 185, 129, 0.15)';
+      ctx.lineWidth = 1.5;
+      for (let i = 0; i < 6; i++) {
+        ctx.beginPath();
+        ctx.arc(w - 50, -50 + i * 40, 200 + i * 30, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // Card Outer Border
+      ctx.strokeStyle = '#10b981';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(10, 10, w - 20, h - 20);
+
+      // Top Gold Accent Bar
+      const topBarGrad = ctx.createLinearGradient(12, 12, w - 24, 12);
+      topBarGrad.addColorStop(0, '#10b981');
+      topBarGrad.addColorStop(0.5, '#3b82f6');
+      topBarGrad.addColorStop(1, '#f59e0b');
+      ctx.fillStyle = topBarGrad;
+      ctx.fillRect(12, 12, w - 24, 6);
+
+      // Header Institution Text
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = 'bold 11px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('DINAS PENDIDIKAN PROVINSI SULAWESI SELATAN', 30, 42);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 17px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('KARTU DUTA PELAJAR HARMONI & DAMAI', 30, 68);
+
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = 'bold 11px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('PROGRAM 10.000 KARYA DIGITAL GURU 2026', 30, 86);
+
+      // Separator
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(30, 100);
+      ctx.lineTo(w - 30, 100);
+      ctx.stroke();
+
+      // Avatar Icon Box
+      const avatarX = 35;
+      const avatarY = 125;
+      const avatarSize = 110;
+
+      ctx.fillStyle = 'rgba(30, 41, 59, 0.9)';
+      ctx.strokeStyle = '#10b981';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(avatarX, avatarY, avatarSize, avatarSize, 12);
+      ctx.fill();
+      ctx.stroke();
+
+      // Avatar Icon (Peace Dove)
+      ctx.font = '54px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('🕊️', avatarX + avatarSize / 2, avatarY + 74);
+      ctx.textAlign = 'left';
+
+      // Status Badge under photo
+      ctx.fillStyle = '#059669';
+      ctx.beginPath();
+      ctx.roundRect(avatarX, avatarY + avatarSize + 10, avatarSize, 22, 6);
+      ctx.fill();
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 10px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('VERIFIED 2026', avatarX + avatarSize / 2, avatarY + avatarSize + 25);
+      ctx.textAlign = 'left';
+
+      // Student Info
+      const infoX = 170;
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '10px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('NAMA LENGKAP PELAJAR:', infoX, 130);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 16px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText((name || 'NAMA SISWA / PESERTA').toUpperCase(), infoX, 150);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '10px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('SATUAN PENDIDIKAN:', infoX, 180);
+
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = 'bold 13px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(school || 'SMAN 1 PAREPARE', infoX, 198);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '10px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('KELAS / NOMOR INDUK:', infoX, 226);
+
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = 'bold 12px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(nis || 'FASE E / NISN 00XXXXXXXX', infoX, 242);
+
+      ctx.fillStyle = '#34d399';
+      ctx.font = 'italic 11px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('"Sipakatau • Sipakalebbi • Sipakainge"', infoX, 275);
+
+      // Footer Strip
+      const footerY = 320;
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.95)';
+      ctx.fillRect(12, footerY, w - 24, h - footerY - 12);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '10px monospace';
+      ctx.fillText('ID: SL-HR-2026-' + Math.abs((name + school).split('').reduce((a, b) => ((a << 5) - a) + b.charCodeAt(0), 0) % 100000).toString().padStart(6, '0'), 30, 345);
+
+      ctx.fillStyle = '#64748b';
+      ctx.font = '9px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('Kartu Duta Pelajar Harmoni Dinas Pendidikan Prov. Sulsel • Berlaku Sepanjang Masa Pendidikan', 30, 360);
+
+      // Mini Seal Stamp
+      ctx.save();
+      ctx.strokeStyle = '#10b981';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(w - 60, footerY + 25, 20, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.fillStyle = '#10b981';
+      ctx.font = 'bold 8px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('SULSEL', w - 60, footerY + 22);
+      ctx.fillText('2026', w - 60, footerY + 32);
+      ctx.restore();
+    }
+
+    function generateAmbassadorCard() {
+      const name = document.getElementById('inputDutaName').value.trim();
+      const school = document.getElementById('inputDutaSchool').value.trim();
+      const nis = document.getElementById('inputDutaNis').value.trim();
+
+      const checks = document.querySelectorAll('.ikrarCheck');
+      let allChecked = true;
+      checks.forEach(c => {
+        if (!c.checked) allChecked = false;
+      });
+
+      if (!name) {
+        showToast('Silakan masukkan nama lengkapmu terlebih dahulu.', 'error');
+        document.getElementById('inputDutaName').focus();
+        return;
+      }
+
+      if (!allChecked) {
+        showToast('Harap setujui dan centang seluruh 5 butir ikrar pelajar harmoni.', 'error');
+        return;
+      }
+
+      playSoundSuccess();
+      drawAmbassadorCard(name, school, nis);
+      showToast('Kartu Duta Pelajar Harmoni berhasil diterbitkan!', 'success');
+    }
+
+    function downloadAmbassadorCard() {
+      playSoundClick();
+      const canvas = document.getElementById('idCardCanvas');
+      const name = document.getElementById('inputDutaName').value.trim() || 'Duta_Harmoni';
+      const cleanName = name.replace(/[^a-zA-Z0-9_-]/g, '_');
+
+      try {
+        const link = document.createElement('a');
+        link.download = `Kartu_Duta_Harmoni_${cleanName}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        showToast('Kartu digital berhasil diunduh (PNG)', 'success');
+      } catch (e) {
+        showToast('Gagal mengunduh kartu. Silakan ambil tangkapan layar.', 'error');
+      }
+    }
+
+    function printAmbassadorCard() {
+      playSoundClick();
+      const canvas = document.getElementById('idCardCanvas');
+      const dataUrl = canvas.toDataURL('image/png');
+      const win = window.open('', '_blank');
+      if (win) {
+        win.document.write(`
+          <html>
+            <head><title>Cetak Kartu Duta Pelajar Harmoni</title></head>
+            <body style="display:flex;justify-content:center;align-items:center;height:100vh;margin:0;background:#f8fafc;">
+              <div style="text-align:center;">
+                <img src="${dataUrl}" style="max-width:90%;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.2);">
+                <p style="font-family:sans-serif;font-size:12px;color:#64748b;margin-top:16px;">Kartu Duta Pelajar Harmoni • Dinas Pendidikan Provinsi Sulawesi Selatan 2026</p>
+              </div>
+            </body>
+          </html>
+        `);
+        win.document.close();
+        win.focus();
+        setTimeout(() => win.print(), 500);
+      } else {
+        showToast('Popup terblokir oleh peramban.', 'error');
+      }
+    }
+
+    /* 7. INITIALIZATION ON LOAD */
+    window.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      renderSimulator();
+      renderGlossary();
+      drawAmbassadorCard('Nasrul', 'SMAN 1 Parepare', 'Fase F / SMAN 1 Parepare');
+    });
+  </script>
+</body>
+</html>
